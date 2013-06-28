@@ -3,7 +3,7 @@ var absolute = require ('modules/absolute.js').mvc;
 var log =new Log();
 
 var mvc = new absolute({
-	SERVER_URL:"/mdmui/",
+	SERVER_URL:"/mdmconsole/",
 	IGNORE:["sso.jag", "login.jag", "logout.jag"]	
 });
 

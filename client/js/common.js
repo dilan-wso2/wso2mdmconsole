@@ -1,7 +1,7 @@
  
 context = function() {
 	var appDefault = {				
-		resourcePath: "/mdmui/themes/wso2mobile/img/",
+		resourcePath: "/mdmconsole/themes/wso2mobile/img/",
 		serverURL: "/mdm/"		
 	}
 	return appDefault;

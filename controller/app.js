@@ -5,7 +5,7 @@ appInfo = function() {
 		headerTitle : "WSO2 Mobile Device Management",
 		title : "WSO2 Mobile Device Management",
 		copyright : "Copyright (c) 2013 - WSO2 Mobile .Inc",
-		server_url: "/mdmui/",
+		server_url: "/mdmconsole/",
 		mdm_server_url: "http://localhost:9763/mdm/"
 	};
 
@@ -25,7 +25,8 @@ getServiceURLs = function(item){
 			"getGroupUsers": "groups/{0}/users",
 			"getUserDevices": "users/{0}/devices",
 			"getUserInfo": "users/{0}",
-			"getDeviceFeatures" : "devices/{0}/features"
+			"getDeviceFeatures" : "devices/{0}/features",
+			"getUserAuthenticate": "users/authenticate"
 		};
 	
 	arguments[0] = urls[item];		
