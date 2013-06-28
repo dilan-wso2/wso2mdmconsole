@@ -13,6 +13,11 @@ appInfo = function() {
 
 }
 
+if(session.get("mdmConsoleUserLogin") != "true" && request.getRequestURI() != appInfo().server_url + "console/login"){	
+	response.sendRedirect(appInfo().server_url + "console/login");
+}
+
+
 
 getServiceURLs = function(item){
 	
@@ -110,6 +115,7 @@ context = function() {
 		title : this.appInfo().title,
 		appInfo : this.appInfo(),
 		theme : this.theme(),
+		userLogin : session.get("mdmConsoleUserLogin"),
 		resourcePath: "../themes/" + this.theme().name + "/img/",
 		contextData : contextData,
 		navigation : this.navigation(contextData.user.role),

@@ -1,9 +1,14 @@
 <header>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<a class="brand" href="#">{{appInfo.headerTitle}}</a>
+	<!--	<a class="brand" href="#"><img src="{{resourcePath}}mobile-mdm.png" style="width:150px"></a>  -->
+		  <a class="brand" href="#">{{appInfo.headerTitle}}</a>
+		  {{#compare userLogin 'true'}}
 			{{>top-navigation}}
+		  {{/compare}}	
 
+			
+			{{#compare userLogin 'true'}}
 			<ul class="nav pull-right">					
 				<li class="dropdown">
 					<a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-user icon-white"> </i> Welcome Chatura Dilan <b class="caret icon-white"></b></a>
@@ -12,11 +17,12 @@
 							<a href="#">My Devices</a>
 						</li>
 						<li>
-							<a href="#">Logut</a>
+							<a href="{{appInfo.server_url}}console/logout">Logout</a>
 						</li>										
 					</ul>
 				</li>
 			</ul>
+			{{/compare}}	
 
 		</div>
 

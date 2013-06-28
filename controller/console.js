@@ -5,11 +5,7 @@ login = function(appController){
 		username = request.getParameter('username');
 		password =  request.getParameter('password');
 		
-		var data = {'username': username, 'password': password};
-		
-		print(username + password);
-		
-		//var result = post(appController.getServiceURLs("getUserAuthenticate"), data, {}, 'json');
+		var data = {'username': username, 'password': password};		
 		
 		print(appController.getServiceURLs("getUserAuthenticate"));
 		 var xhr = new XMLHttpRequest();
@@ -17,14 +13,11 @@ login = function(appController){
 		xhr.send(data);
 		
 		if(xhr.status == '200'){
+			session.put("mdmConsoleUserLogin", "true");
 			response.sendRedirect('dashboard');
 		}
 	}
-	
-	//print(request.getMethod());
-	
-	
-	
+		
 	
 	context = appController.context();
 	context.title = context.title + " | Login";		
@@ -35,6 +28,13 @@ login = function(appController){
 	
 	
 	
+}
+
+
+
+logout = function(appController){		
+	session.put("mdmConsoleUserLogin", null);
+	response.sendRedirect('login');
 }
 
 
