@@ -1,0 +1,10 @@
+{{#data.features}}
+{{#compare feature_type 'OPERATION'}}
+<div draggable="true" class="features-role" data-feature="{{name}}" data-template={{template}}>
+<div  class="nav nav-list bs-docs-sidenav nav-collapse collapse" title="Drag and drop the feature to the group to apply">
+	<img src="{{../../resourcePath}}features/{{name}}.png" class="features-role-image">
+	{{description}}
+</div>
+</div>
+{{/compare}}
+{{/data.features}}

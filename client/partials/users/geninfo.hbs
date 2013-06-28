@@ -1,0 +1,27 @@
+{{#genInfo.received_data}}
+
+
+{{#if battery}}
+<div class="raw well-small gen-info" data-toggle="tooltip" title="Battery Level: {{battery.level}}%">
+<img src="{{../../resourcePath}}battery/battery-{{#batteryLevel battery.level}}{{/batteryLevel}}.png" style="width: 25px" > {{battery.level}}%
+</div>
+{{/if}}
+
+{{#if internal_memory}}
+<div class="raw well-small gen-info" data-toggle="tooltip" title="Internal Memory: {{internal_memory.available}}GB">
+<img src="{{../../resourcePath}}int-memory.png" style="width: 25px" > 1GB
+</div>
+{{/if}}
+
+{{#if external_memory}}
+<div class="raw well-small gen-info" data-toggle="tooltip" title="External Memory: {{external_memory.available}}GB">
+<img src="{{../../resourcePath}}ext-sdcard.png" style="width: 25px" > 2GB
+</div>
+{{/if}}
+
+
+
+
+
+
+{{/genInfo.received_data}}
