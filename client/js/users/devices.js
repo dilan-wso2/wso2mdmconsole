@@ -165,9 +165,9 @@ function loadAppList(tabId, deviceId) {
 				}));
 
 				$('.bxslider').bxSlider({
-					minSlides : 8,
+					minSlides : 5,
 					maxSlides : 40,
-					slideWidth : 400,
+					slideWidth : 300,
 					slideMargin : 10
 				});
 
