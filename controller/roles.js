@@ -4,6 +4,7 @@ configuration = function(appController){
 	context = appController.context();
 	context.title = context.title + " | Configuration";	
 	context.page = "configuration";
+	context.jsFile= "roles/configuration.js";
 	context.data = {
 		configOption : "roles"		
 	}
@@ -39,7 +40,13 @@ users = function(appController){
 	
 	context = appController.context();
 	
-	var role = request.getParameter('role');		
+	var role = request.getParameter('role');
+	if(!role){
+		role = session.get('mdmConsoleSelectedRole');
+	}
+	session.put('mdmConsoleSelectedRole', role)
+	
+	
 	var users = JSON.parse(get(appController.getServiceURLs("getGroupUsers", role)).data);
 	
 	var features = JSON.parse(get(appController.getServiceURLs("getGroupsFeatures")).data);

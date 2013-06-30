@@ -36,10 +36,14 @@ add = function(appController){
 
 devices = function(appController){	
 	
-	context = appController.context();
-	
-	
+	context = appController.context();	
+
 	var userId = request.getParameter('user');
+	if(!userId){
+		userId = session.get('mdmConsoleSelectedUser');
+	}
+	session.put('mdmConsoleSelectedUser', userId)
+	
 	var user = JSON.parse(get(appController.getServiceURLs("getUserInfo", userId)).data);		
 	var devices = JSON.parse(get(appController.getServiceURLs("getUserDevices", userId)).data);
 	

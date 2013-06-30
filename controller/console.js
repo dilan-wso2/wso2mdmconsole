@@ -7,8 +7,7 @@ login = function(appController){
 		
 		var data = {'username': username, 'password': password};		
 		
-		print(appController.getServiceURLs("getUserAuthenticate"));
-		 var xhr = new XMLHttpRequest();
+		var xhr = new XMLHttpRequest();
 		 xhr.open("POST", appController.getServiceURLs("getUserAuthenticate"));		
 		xhr.send(data);
 		
@@ -39,12 +38,29 @@ logout = function(appController){
 
 
 
-dashboard = function(appController){		
+dashboard = function(appController){
+	
+	
+	var tabs = [
+		{tab_name: "Home", widgets:[
+		      {template: "home_devices_by_os"}                      
+		                           
+		]}       
+	               
+	];
+	
+	
+	
+	
+	
+	
+	
+	
 	context = appController.context();
 	context.title = context.title + " | Dashboard";	
 	context.page = "dashboard";
 	context.data = {
-		
+			tabs: tabs
 	}
 	return context;	
 	

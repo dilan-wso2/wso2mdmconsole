@@ -385,3 +385,41 @@ textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[ty
 .button-block-refresh{
 	margin-top: -5px;
 }
+
+
+
+
+/* ----- TABLES ------- */
+
+.dataTables_filter{
+	 float: right;
+}
+
+.dataTables_paginate{
+	 float: right;
+}
+
+/* DataTables sorting */
+.sorting_asc {
+    background: url('../img/datatables/sort_asc.png') no-repeat center right;
+}
+ 
+.sorting_desc {
+    background: url('../img/datatables/sort_desc.png') no-repeat center right;
+}
+ 
+.sorting {
+    background: url('../img/datatables/sort_both.png') no-repeat center right;
+}
+ 
+.sorting_asc_disabled {
+    background: url('../img/datatables/sort_asc_disabled.png') no-repeat center right;
+}
+ 
+.sorting_desc_disabled {
+    background: url('../img/datatables/sort_desc_disabled.png') no-repeat center right;
+}
+
+.select-filter{
+	padding-right: 10px;
+}
