@@ -68,10 +68,10 @@
 											</div>
 
 											<div class="block-body container-fluid raw-fluid well-small">
-												<div class="pull-right">
+												<div class="pull-left">
 													<img class="device-image" data-tab-id="{{@index}}" data-device-id="{{id}}" src="/assets/wso2mobile/img/models/{{properties.model}}.png" style="height: 300px">
 												</div>												
-												<div class="pull-left" style="font-size: x-small" id="gen-info-{{@index}}">
+												<div class="pull-right" style="font-size: x-small" id="gen-info-{{@index}}">
 													
 												</div>
 											</div>
@@ -141,7 +141,7 @@
 												
 												{{#compare feature_type 'OPERATION'}}
 												<div class="features-device" data-feature="{{name}}"   data-template="{{template}}">
-													<div title="{{description}}" class="span1" draggable="true">
+													<div title="{{description}}" class="span2" draggable="true">
 														<div class="raw text-center">
 															<img src="{{../../../resourcePath}}features/{{name}}.png" class="features-role-image">
 														</div>
