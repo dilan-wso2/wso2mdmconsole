@@ -8,12 +8,22 @@ login = function(appController){
 		var data = {'username': username, 'password': password};		
 		
 		var xhr = new XMLHttpRequest();
-		 xhr.open("POST", appController.getServiceURLs("getUserAuthenticate"));		
+		xhr.open("POST", appController.getServiceURLs("getUserAuthenticate"));		
 		xhr.send(data);
 		
 		if(xhr.status == '200'){
-			session.put("mdmConsoleUserLogin", "true");
-			response.sendRedirect('dashboard');
+			session.put("mdmConsoleUserLogin", "true");	
+			var currentUser = JSON.parse(xhr.responseText);
+			session.put("mdmConsoleUser", currentUser);
+			if(currentUser){
+				if(currentUser.category_id == 1){
+					response.sendRedirect('dashboard');
+				}else{
+					response.sendRedirect(appController.appInfo().server_url + 'users/devices?user=' + currentUser.id);
+				}
+			}
+			
+			
 		}
 	}
 		
@@ -33,12 +43,13 @@ login = function(appController){
 
 logout = function(appController){		
 	session.put("mdmConsoleUserLogin", null);
+	session.put("mdmConsoleUser", null);
 	response.sendRedirect('login');
 }
 
 
 
-dashboard = function(appController){
+dashboard = function(appController){	
 	
 	
 	var tabs = [
@@ -48,13 +59,6 @@ dashboard = function(appController){
 		]}       
 	               
 	];
-	
-	
-	
-	
-	
-	
-	
 	
 	context = appController.context();
 	context.title = context.title + " | Dashboard";	

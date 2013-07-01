@@ -32,6 +32,7 @@ getServiceURLs = function(item){
 			"getUserInfo": "users/{0}",
 			"getDeviceFeatures" : "devices/{0}/features",
 			"getUserAuthenticate": "users/authenticate",
+			"getCurrentUser": "users/current",
 			"groupsCRUD": "groups",
 			"usersCRUD": "users"
 		};
@@ -69,11 +70,30 @@ navigation = function(role) {
 			
 	};
 	
-	var topNavigation = [
-		{name : "Dashboard"	, link: appInfo().server_url + "console/dashboard", displayPage: "dashboard", icon: "icon-th-large"},
-		{name : "Configurations", link: appInfo().server_url + "users/configuration", displayPage: "configuration", icon:"icon-wrench"},
-		{name : "Management"	, link: appInfo().server_url + "roles/management", displayPage: "management", icon:"icon-briefcase"},
-	];
+	var currentUser = session.get("mdmConsoleUser");
+	
+	var topNavigation = [];
+	
+	if(currentUser){
+		
+		if(currentUser.category_id == 1){
+			topNavigation = [
+			             		{name : "Dashboard"	, link: appInfo().server_url + "console/dashboard", displayPage: "dashboard", icon: "icon-th-large"},
+			             		{name : "Configurations", link: appInfo().server_url + "users/configuration", displayPage: "configuration", icon:"icon-wrench"},
+			             		{name : "Management"	, link: appInfo().server_url + "roles/management", displayPage: "management", icon:"icon-briefcase"},
+			];
+			
+		}else{		
+			topNavigation = [		             	
+			           {name : "Management"	, link: appInfo().server_url + "roles/management", displayPage: "management", icon:"icon-briefcase"}
+			];		
+		}		
+		
+	}
+	
+	
+	
+	
 	
 	
 	var configNavigation =	[
@@ -118,6 +138,7 @@ context = function() {
 		appInfo : this.appInfo(),
 		theme : this.theme(),
 		userLogin : session.get("mdmConsoleUserLogin"),
+		currentUser : session.get("mdmConsoleUser"),
 		resourcePath: "../themes/" + this.theme().name + "/img/",
 		contextData : contextData,
 		navigation : this.navigation(contextData.user.role),
