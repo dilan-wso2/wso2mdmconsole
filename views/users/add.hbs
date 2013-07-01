@@ -54,7 +54,7 @@
 							<div class="control-group">
 								<label class="control-label" for="inputMobile">Mobile</label>
 								<div class="controls">
-									<input type="password" id="inputMobile">
+									<input type="text" id="inputMobile">
 								</div>
 							</div>
 
@@ -63,14 +63,10 @@
 								<div class="controls raw">
 									<div class="span6">
 										<select multiple="multiple" size="10" name="duallistbox_demo1" class='duallistbox'>
-											<option value="option1">Option 1</option>
-											<option value="option2">Option 2</option>
-											<option value="option4">Option 4</option>
-											<option value="option5">Option 5</option>
-											<option value="option7">Option 7</option>
-											<option value="option8">Option 8</option>
-											<option value="option9">Option 9</option>
-											<option value="option0">Option 10</option>
+											{{#data.groups}}
+												<option value="{{id}}">{{name}}</option>
+											{{/data.groups}}											
+											
 										</select>
 									</div>
 
@@ -79,7 +75,7 @@
 
 							<hr>
 							<div class="offset10">
-								<a class="btn btn-orange btn-large" href="add" ><i class="icon-plus icon-white"></i> Add</a>
+								<a class="btn btn-orange btn-large" id="btn-add" href="#" ><i class="icon-plus icon-white"></i> Add</a>
 							</div>
 
 						</form>

@@ -33,7 +33,7 @@ $('.group-item').droppable({
 function prePerformOperation(groupId, feature, featureTemplate) {
 
 	if (featureTemplate != "") {
-		$.get('../client/partials/feature_templates/' + featureTemplate + '.hbs').done(function(templateData) {
+		$.get('../client/templates/feature_templates/' + featureTemplate + '.hbs').done(function(templateData) {
 			var template = Handlebars.compile(templateData);
 			$("#featureModal").html(template({
 				feature : feature

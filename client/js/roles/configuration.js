@@ -17,19 +17,19 @@ $(document).ready( function () {
 	} );
 	
 	
-	createFilter(oTable, 0, "select-filter-0", "Groups");
-	$('#select-filter-0', this).change(function () {
-		 oTable.fnFilter( $(this).val(), 0);
-	})
+//	createFilter(oTable, 0, "select-filter-0", "Groups");
+//	$('#select-filter-0', this).change(function () {
+//		 oTable.fnFilter( $(this).val(), 0);
+//	})
 	
 	
-	createFilter(oTable, 1, "select-filter-1", "Groups");
-	$('#select-filter-1', this).change(function () {
-		 oTable.fnFilter( $(this).val(), 1);
-	})
+//	createFilter(oTable, 1, "select-filter-1", "Groups");
+//	$('#select-filter-1', this).change(function () {
+//		 oTable.fnFilter( $(this).val(), 1);
+//	})
 	 
 	 
-	$('.selectpicker').selectpicker();
+//	$('.selectpicker').selectpicker();
 	
 	
 } );

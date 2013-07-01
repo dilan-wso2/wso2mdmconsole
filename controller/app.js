@@ -31,7 +31,9 @@ getServiceURLs = function(item){
 			"getUserDevices": "users/{0}/devices",
 			"getUserInfo": "users/{0}",
 			"getDeviceFeatures" : "devices/{0}/features",
-			"getUserAuthenticate": "users/authenticate"
+			"getUserAuthenticate": "users/authenticate",
+			"groupsCRUD": "groups",
+			"usersCRUD": "users"
 		};
 	
 	arguments[0] = urls[item];		

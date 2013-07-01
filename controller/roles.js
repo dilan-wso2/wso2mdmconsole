@@ -1,12 +1,15 @@
 
 configuration = function(appController){	
+	
+	var groups = JSON.parse(get(appController.getServiceURLs("groupsCRUD")).data);
 			
 	context = appController.context();
 	context.title = context.title + " | Configuration";	
 	context.page = "configuration";
 	context.jsFile= "roles/configuration.js";
 	context.data = {
-		configOption : "roles"		
+		configOption : "roles",
+		groups : groups
 	}
 	return context;	
 	

@@ -1,9 +1,7 @@
 <div class="container-fluid">
 
 	<div class="raw-fluid">
-		<div class="span12">
-			{{>config-navigation}}
-		</div>
+		<div class="span12">{{>config-navigation}}</div>
 	</div>
 
 	<div class="raw">
@@ -12,39 +10,24 @@
 
 				<div class="block">
 					<div class="block-header">
-						<div class="block-header-title pull-left">
-							Users
-						</div>
+						<div class="block-header-title pull-left">Users</div>
 						<div class="pull-right">
-							<a class="btn btn-orange" href="add" ><i class="icon-plus icon-white"> </i> Add User</a>
+							<a class="btn btn-orange" href="add"><i
+								class="icon-plus icon-white"> </i> Add User</a>
 						</div>
 					</div>
 
-					<div class="block-body block-body container-fluid raw-fluid">
+					<div class="block-body block-body container-fluid raw-fluid">		
 
-						<div class="raw-fluid">
-							<select class="selectpicker">
-								<optgroup label="Groups">
-									<option>Everyone</option>
-									<option>WSO2mobile</option>
-									<option>WSO2</option>
-								</optgroup>
-							</select>
-							<div class="pull-right">
-								<input type="text" class="search-query" placeholder="Search">
-							</div>
-
-						</div>
-
-						<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+						
+						<table cellpadding="0" cellspacing="0" border="0"
+							class="table table-striped table-bordered" id="main-table">
 							<thead>
 								<tr>
 									<th>First Name</th>
 									<th>Last Name</th>
 									<th>e Mail</th>
 									<th>Mobile</th>
-									<th>Devices</th>
-									<th>Role</th>
 									<th>Action</th>
 								</tr>
 							</thead>
@@ -53,41 +36,18 @@
 								<tr>
 									<td>{{first_name}}</td>
 									<td>{{last_name}}</td>
-									<td>{{email}}</td>
-									<td>{{mobile}}</td>
-									<td>{{no_of_devices}} Devices</td>
-									<td>{{group}}</td>
-									<td class="center"><a href="edit" title="Edit" class="icon-edit"> </a><a href="edit" title="Delete" class="icon-remove"> </a></td>
+									<td>{{username}}</td>
+									<td>{{mobile_no}}</td>
+									<td class="center"><a href="edit" title="Edit"
+										class="icon-edit"> </a><a href="edit" title="Delete"
+										class="icon-remove"> </a></td>
 								</tr>
-								{{/data.users}}								
+								{{/data.users}}
 							</tbody>
 						</table>
 
-						<div class="pagination">
-							<ul>
-								<li class="disabled active">
-									<a href="#" >Prev</a>
-								</li>
-								<li class="active">
-									<a href="#">1</a>
-								</li>
-								<li>
-									<a href="#">2</a>
-								</li>
-								<li>
-									<a href="#">3</a>
-								</li>
-								<li>
-									<a href="#">4</a>
-								</li>
-								<li>
-									<a href="#">5</a>
-								</li>
-								<li>
-									<a href="#">Next</a>
-								</li>
-							</ul>
-						</div>
+
+
 
 					</div>
 

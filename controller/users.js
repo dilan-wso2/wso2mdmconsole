@@ -2,11 +2,7 @@
 configuration = function(appController){	
 	
 	
-	var users = [
-		{"id": "1", "email": "dilan@dilan.me", "first_name" : "Chatura", "last_name" : "Dilan", "mobile" : "0777266673", "group": "User", "no_of_devices": "0"},
-		{"id": "2", "email": "dilan@dilan.me", "first_name" : "Chatura", "last_name" : "Dilan", "mobile" : "0777266673", "group": "User", "no_of_devices": "0"}
-
-	]
+	var users = JSON.parse(get(appController.getServiceURLs("usersCRUD")).data);
 			
 	context = appController.context();
 	context.title = context.title + " | Configuration";	
@@ -22,12 +18,17 @@ configuration = function(appController){
 
 
 add = function(appController){	
+	
+	
+	var groups = JSON.parse(get(appController.getServiceURLs("groupsCRUD")).data);
 			
 	context = appController.context();
 	context.title = context.title + " | Add User";	
 	context.page = "configuration";	
+	context.jsFile= "users/add.js"
 	context.data = {
-		configOption : "users"		
+		configOption : "users",
+		groups: groups
 	}
 	return context;	
 	

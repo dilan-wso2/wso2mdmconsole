@@ -19,7 +19,8 @@ getServiceURLs = function(item){
 			"getDeviceNotifications": "notifications/devices/{0}",
 			"performDeviceOperation" : "devices/{0}/operations/{1}",
 			"performGroupOperation" : "group/{0}/operations/{1}",
-			"performUserOperation" : "user/{0}/operations/{1}"
+			"performUserOperation" : "user/{0}/operations/{1}",
+			"userCRUD": "users"	
 			
 		};
 	
