@@ -76,7 +76,7 @@ navigation = function(role) {
 	
 	if(currentUser){
 		
-		if(currentUser.category_id == 1){
+		if(role == 'admin'){
 			topNavigation = [
 			             		{name : "Dashboard"	, link: appInfo().server_url + "console/dashboard", displayPage: "dashboard", icon: "icon-th-large"},
 			             		{name : "Configurations", link: appInfo().server_url + "users/configuration", displayPage: "configuration", icon:"icon-wrench"},
@@ -127,10 +127,32 @@ theme = function() {
 context = function() {
 
 	var contextData = {};
-	contextData.user = {
-		name : "Guest",
-		role : "guest"
-	};
+	
+	
+var currentUser = session.get("mdmConsoleUser");
+	
+	if(currentUser){
+		if(currentUser.category_id == 1){
+			contextData.user = {
+					name : "Admin",
+					role : "admin"
+				};
+			
+		}else{		
+			contextData.user = {
+					name : "User",
+					role : "user"
+				};		
+		}		
+	}else{
+		contextData.user = {
+				name : "Guest",
+				role : "guest"
+			};
+	}
+	
+	
+	
 
 	var appDefault = {
 		layout : this.theme().default_layout,

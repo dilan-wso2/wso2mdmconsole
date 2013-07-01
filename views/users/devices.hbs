@@ -1,6 +1,8 @@
 <div class="container-fluid">
 
 	<div class="raw-fluid">
+	
+	{{#compare contextData.user.role 'admin'}}
 
 		<ul class="breadcrumb">
 			<li>
@@ -14,6 +16,8 @@
 			</li>
 		</ul>
 	</div>
+	
+	{{/compare}}
 
 	<div class="raw-fluid">
 		<div class="span12">
