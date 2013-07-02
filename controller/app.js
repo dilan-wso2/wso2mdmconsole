@@ -85,7 +85,7 @@ navigation = function(role) {
 			
 		}else{		
 			topNavigation = [		             	
-			           {name : "Management"	, link: appInfo().server_url + "roles/management", displayPage: "management", icon:"icon-briefcase"}
+			           {name : "My Devices"	, link: appInfo().server_url + "roles/management", displayPage: "management", icon:"icon-briefcase"}
 			];		
 		}		
 		

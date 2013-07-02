@@ -198,6 +198,17 @@ function loadGeneralInformation(tabId, deviceId) {
 					resourcePath : context().resourcePath
 				}));
 				// $('.gen-info').tooltip();
+				var receivedData = {};
+				receivedData.location_obj = {};
+				receivedData.location_obj.latitude = "6.9123661";
+				receivedData.location_obj.longitude = "79.8525739";
+				
+				$('#map_canvas').gmap().bind('init', function(ev, map) {
+					$('#map_canvas').gmap('addMarker', {'position': receivedData.location_obj.latitude + "," + receivedData.location_obj.longitude, 'bounds': true}).click(function() {
+						$('#map_canvas').gmap('openInfoWindow', {'content': 'Location'}, this);
+					});
+				});
+				
 			});
 
 		},
