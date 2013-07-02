@@ -1,21 +1,21 @@
 
 <div class="block">
 	<div class="block-header">
-		<div class="block-header-title pull-left">Devices By OS</div>
+		<div class="block-header-title pull-left">{{title}}</div>
 	</div>
 
 	<div class="container-fluid raw-fluid block-body"
-		id="home_devices_by_os"></div>
+		id="chart-{{index}}"></div>
 
 </div>
 
 
-
-
+ 
 
 <script type="text/javascript">
 	$(function() {
-		$('#home_devices_by_os')
+				
+		$('#chart-{{index}}')
 				.highcharts(
 						{
 							chart : {

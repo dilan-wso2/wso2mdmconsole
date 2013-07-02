@@ -1,4 +1,6 @@
- 
+
+
+
 context = function() {
 	var appDefault = {				
 		resourcePath: "/mdmconsole/themes/wso2mobile/img/",
@@ -20,7 +22,9 @@ getServiceURLs = function(item){
 			"performDeviceOperation" : "devices/{0}/operations/{1}",
 			"performGroupOperation" : "group/{0}/operations/{1}",
 			"performUserOperation" : "user/{0}/operations/{1}",
-			"userCRUD": "users"	
+			"userCRUD": "users",
+			
+			"getChartAllDevicesByOS" : "cont/dashboard.jag"
 			
 		};
 	
